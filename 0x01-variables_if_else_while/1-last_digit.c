@@ -13,18 +13,16 @@ int main(void)
 {
 
 int n;
-
-
-
+int last_digit;
+int holder;
+int compare;
+ 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 
 /* your code goes there */
-int holder;
 holder = n / 10;
-int compare;
 compare = holder * 10;
-int last_digit;
 last_digit = n - compare;
 
 if (last_digit > 5)
