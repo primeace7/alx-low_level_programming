@@ -16,7 +16,7 @@ int n;
 int last_digit;
 int holder;
 int compare;
- 
+
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 
