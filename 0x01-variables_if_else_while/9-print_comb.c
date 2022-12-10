@@ -8,16 +8,20 @@
 */
 int main(void)
 {
+
 int start;
 int stop;
-start = 'a';
-stop = 'z';
+start = '0';
+stop = '9';
 
 while (start <= stop)
 {
 putchar(start);
 start++;
+putchar(',');
+putchar(' ');
 }
 putchar((int)'\n');
+
 return (0);
 }
