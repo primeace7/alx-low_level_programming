@@ -16,7 +16,7 @@ stop = 'z';
 while (start <= stop)
 {
 if (start == 'e' || start == 'q')
-start ++;
+start++;
 else
 {
 putchar(start);
