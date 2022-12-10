@@ -13,10 +13,15 @@ int stop;
 start = 'a';
 stop = 'z';
 
-while (start <= stop && start != 'e' && start != 'q')
+while (start <= stop)
+{
+if (start == 'e' || start == 'q')
+start ++;
+else
 {
 putchar(start);
 start++;
+}
 }
 putchar((int)'\n');
 return (0);
