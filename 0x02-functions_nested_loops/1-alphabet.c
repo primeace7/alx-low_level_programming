@@ -2,16 +2,16 @@
 
 void print_alphabet(void)
 {
-  int start;
-  int stop;
+int start;
+int stop;
 
-  start = 'a';
-  stop = 'z';
-  while (start <= stop)
-    {
-      _putchar(start);
-      start++;
-    }
-  _putchar('\n');
-  return;
+start = 'a';
+stop = 'z';
+while (start <= stop)
+{
+_putchar(start);
+start++;
+}
+_putchar('\n');
+return;
 }
