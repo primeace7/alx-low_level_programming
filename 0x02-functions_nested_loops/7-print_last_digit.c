@@ -15,6 +15,5 @@ int ret;
 hold = n / 10;
 res = hold * 10;
 ret = n - res;
-_putchar((char)ret);
 return (ret);
 }
