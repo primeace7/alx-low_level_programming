@@ -12,7 +12,7 @@ int _isalpha(int c)
 {
 int start_upper;
 int stop_upper;
-int stop_lower;
+int start_lower;
 
 start_upper = 'A';
 start_lower = 'a';
