@@ -16,16 +16,21 @@ stop1 = '9';
 stop2 = '9';
 stop3 = '9';
 stop4 = '9';
-while (start4 <= stop4) {
-while (start3 <= stop3) {
-while (start2 <= stop2) {
-while (start1 <= stop1) {
+while (start4 <= stop4)
+{
+while (start3 <= stop3)
+{
+while (start2 <= stop2)
+{
+while (start1 <= stop1)
+{
 putchar(start4);
 putchar(start3);
 putchar(' ');
 putchar(start2);
 putchar(start1);
-if (!(start4 == '9' && start3 == '8')) {
+if (!(start4 == '9' && start3 == '8'))
+{
 putchar(',');
 putchar(' '); }
 start1++; }
