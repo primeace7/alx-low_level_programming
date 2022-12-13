@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_alphabet - print the english alphabet in lower case
+ *
+ * Return: nothing(void)
+ */
 void print_alphabet(void)
 {
 int start;
