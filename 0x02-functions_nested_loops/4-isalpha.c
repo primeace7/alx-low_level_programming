@@ -11,7 +11,6 @@
 int _isalpha(int c)
 {
 int start_upper;
-int start_lower;
 int stop_upper;
 int stop_lower;
 
