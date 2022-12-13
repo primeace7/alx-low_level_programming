@@ -17,7 +17,6 @@ int stop_lower;
 
 start_upper = 'A';
 start_lower = 'a';
-stop_lower = 'z';
 stop_upper = 'Z';
 
 while (start_upper <= stop_upper)
