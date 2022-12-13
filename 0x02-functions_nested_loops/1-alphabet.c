@@ -5,5 +5,11 @@ void print_alphabet(void)
 
   start = 'a';
   stop = 'z';
+  while (start <= stop)
+    {
+      _putchar(start);
+      start++;
+    }
+  _putchar('\n');
   return;
 }
