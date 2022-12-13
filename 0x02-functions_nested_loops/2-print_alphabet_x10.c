@@ -24,6 +24,7 @@ _putchar(start);
 start++;
 }
 start2++;
+start = 'a';
 }
 _putchar('\n');
 }
