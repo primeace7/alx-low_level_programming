@@ -12,7 +12,7 @@ int hold;
 int res;
 int ret;
 
-hold = n / 100;
+hold = n / 10;
 res = hold * 10;
 ret = n - res;
 return (ret);
