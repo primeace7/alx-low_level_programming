@@ -21,7 +21,8 @@ while (start2 <= stop2)
 {
 if (count2 * count1 <= 9)
 {
-_putchar(start2);
+_putchar(count1 * count2 + '0');
+_putchar(' ');
 _putchar(' ');
 _putchar(' ');}
 else
