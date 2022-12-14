@@ -22,7 +22,7 @@ while (start2 <= stop2)
 if (count2 * count1 <= 9)
 {
 _putchar(count1 * count2 + '0');
-_putchar(' ');
+_putchar(',');
 _putchar(' ');
 _putchar(' ');}
 else
@@ -30,10 +30,9 @@ else
 _putchar(((count2 * count1) / 10) + '0');
 _putchar(((count1 * count2) % 10) + '0');
 _putchar(' ');
-}
 if (start2 < '9')
 _putchar(',');
-
+}
 count2++;
 start2++;
 }
