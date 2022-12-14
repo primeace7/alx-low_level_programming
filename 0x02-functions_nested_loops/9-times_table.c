@@ -24,7 +24,7 @@ _putchar(start2);
 else
 {
 _putchar(((count2 * count1) / 10) + '0');
-_putchar(((count1 * count2)) % 10) + '0');
+_putchar(((count1 * count2) % 10) + '0');
 }
 if (start2 < '9')
 {
