@@ -7,13 +7,14 @@
 */
 int main(void)
 {
-int term0, term1, term, n;
+int n;
+ long double term0, term1, term;
 term0 = 1;
 term1 = 2;
 n = 0;
 
 printf("%d, %d, ", term0, term1);
-while (n < 47)
+while (n < 48)
 {
 term = term0 + term1;
 term0 = term1;
