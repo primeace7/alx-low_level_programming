@@ -18,15 +18,15 @@ while (start1 <= stop1)
 while (start2 <= stop2)
 {
 _putchar(start2);
-if (start2 < 9)
+if (start2 < '9')
 {
 _putchar(',');
 _putchar(' ');
 }
-_putchar('\n');
 start2++;
 }
 start1++;
 start2 = '0';
+_putchar('\n');
 }
 }
