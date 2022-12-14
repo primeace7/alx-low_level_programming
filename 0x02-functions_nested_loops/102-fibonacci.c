@@ -20,6 +20,9 @@ term = term0 + term1;
 term0 = term1;
 term1 = term;
 n++;
+if (n == 47)
+printf("%ld", term)
+else
 printf("%ld, ", term);
 
 }
