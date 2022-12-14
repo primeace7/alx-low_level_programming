@@ -23,6 +23,7 @@ if (start2 < 9)
 _putchar(',');
 _putchar(' ');
 }
+_putchar('\n');
 start2++;
 }
 start1++;
