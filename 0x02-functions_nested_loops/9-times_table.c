@@ -19,7 +19,7 @@ while (start1 <= stop1)
 {
 while (start2 <= stop2)
 {
-if (start2 *start1 <= '9')
+if (count2 * count1 <= 9)
 _putchar(start2);
 else
 {
