@@ -12,9 +12,8 @@ if (n < 0 || n > 15)
 {
 return;
 }
-int count1, count2;
-count1 = 0;
-count2 = 0;
+int count1 = 0;
+int count2 = 0;
 
 while (count1 <= n)
 {
