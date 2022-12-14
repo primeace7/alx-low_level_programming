@@ -15,7 +15,7 @@ current = 1;
 term0 = 0;
 term1 = 1;
 
-while(current < 4000000)
+while (current < 4000000)
 {
 current = term0 + term1;
 if (current % 2 == 0)
