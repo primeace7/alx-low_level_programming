@@ -46,5 +46,8 @@ start4 = '0';
 }
 }
 start1++;
+start2 = '0';
+start3 = '0';
+start4 = '0';
 }
 }
