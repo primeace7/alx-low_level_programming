@@ -19,12 +19,11 @@ while (n < 48)
 term = term0 + term1;
 term0 = term1;
 term1 = term;
-n++;
-if (n == 47)
-printf("%ld", term);
-else
+if (n != 47)
 printf("%ld, ", term);
-
+else
+printf("%ld", term);
+n++;
 }
 putchar('\n');
 return (0); }
