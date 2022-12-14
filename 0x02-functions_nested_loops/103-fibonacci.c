@@ -18,11 +18,12 @@ term1 = 2;
 while(current < 4000000)
 {
 current = term0 + term1;
+if (current % 2 == 0)
+sum += current;
+
 term0 = term1;
 term1 = current;
 
-if (current % 2 == 0)
-sum += current;
 }
 printf("%ld\n", sum);
 return (0);
