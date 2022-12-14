@@ -7,43 +7,39 @@
 */
 void times_table(void)
 {
-int start1, start2, stop1, stop2, count1, count2;
-start1 = '0';
-start2 = '0';
-stop1 = '9';
-stop2 = '9';
+int count1, count2;
 count1 = 0;
 count2 = 0;
 
-while (start1 <= stop1)
+while (count1 <= 9)
 {
-while (start2 <= stop2)
+while (count2 <= 9)
 {
-if (count2 * count1 <= 9)
+if ((count1 * count2) < 9)
 {
-_putchar(count1 * count2 + '0');
-if (start2 < '9')
+_putchar((count1 * count2) + '0');
+if (count2 < 9)
 {
 _putchar(',');
 _putchar(' ');
-}
 if (((count2 + 1) * count1) <= 9)
-_putchar(' ');}
+_putchar(' '); }
+}
 else
 {
-_putchar(((count2 * count1) / 10) + '0');
-_putchar(((count1 * count2) % 10) + '0');
-if (start2 < '9')
+_putchar((count1 * count2) / 10 + '0');
+_putchar((count1 * count2) % 10 + '0');
+if (count2 < 9)
+{
 _putchar(',');
 _putchar(' ');
 }
+}
 count2++;
-start2++;
 }
 count2 = 0;
 count1++;
-start1++;
-start2 = '0';
 _putchar('\n');
 }
+return;
 }
