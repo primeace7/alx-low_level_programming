@@ -10,10 +10,8 @@ void print_times_table(int n)
 {
 if (n < 0 || n > 15)
 return;
-
 int count1;
 int count2;
-
 count1 = 0;
 count2 = 0;
 
