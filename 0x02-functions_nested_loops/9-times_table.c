@@ -21,6 +21,7 @@ while (start2 <= stop2)
 {
 if (count2 * count1 <= 9)
 _putchar(start2);
+_putchar(' ');
 else
 {
 _putchar(((count2 * count1) / 10) + '0');
