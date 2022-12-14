@@ -8,7 +8,7 @@
 */
 int main(void)
 {
-double term0, term1, term;
+long double term0, term1, term;
 int count;
 
 term0 = 0;
