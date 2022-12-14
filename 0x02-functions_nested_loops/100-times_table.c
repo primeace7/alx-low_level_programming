@@ -13,6 +13,7 @@ return;
 
 int count1;
 int count2;
+
 count1 = 0;
 count2 = 0;
 
