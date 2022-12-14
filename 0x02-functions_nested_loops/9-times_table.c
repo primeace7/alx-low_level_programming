@@ -17,15 +17,15 @@ while (start1 <= stop1)
 {
 while (start2 <= stop2)
 {
-_putchar(start1);
-if (start1 < 9)
+_putchar(start2);
+if (start2 < 9)
 {
 _putchar(',');
 _putchar(' ');
 }
-start1++;
-}
 start2++;
-start1 = '0';
+}
+start1++;
+start2 = '0';
 }
 }
