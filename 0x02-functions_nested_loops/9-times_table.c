@@ -15,7 +15,7 @@ while (count1 <= 9)
 {
 while (count2 <= 9)
 {
-if ((count1 * count2) < 9)
+if ((count1 * count2) <= 9)
 {
 _putchar((count1 * count2) + '0');
 if (count2 < 9)
