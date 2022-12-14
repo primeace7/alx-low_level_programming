@@ -12,7 +12,8 @@ term0 = 1;
 term1 = 2;
 n = 0;
 
-while (n < 48)
+printf("%d, %d, ", term0, term1);
+while (n < 47)
 {
 term = term0 + term1;
 term0 = term1;
@@ -21,4 +22,5 @@ n++;
 printf("%d, ", term);
 
 }
+putchar('\n');
 return (0); }
