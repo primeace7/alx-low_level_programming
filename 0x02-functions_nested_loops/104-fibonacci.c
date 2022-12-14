@@ -19,7 +19,7 @@ while (count < 98)
 {
 term = term0 + term1;
 term0 = term1;
-term1 =term;
+term1 = term;
 if (count < 97)
 printf("%.Lf, ", term);
 else
