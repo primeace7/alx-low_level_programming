@@ -31,11 +31,9 @@ _putchar(':');
 _putchar(start3);
 _putchar(start4);
 _putchar('\n');
-start4++;
-}
+start4++; }
 start3++;
-start4 = '0';
-}
+start4 = '0'; }
 if (start1 == '2' && start2 == '3')
 return;
 else
@@ -43,11 +41,9 @@ else
 start2++;
 start3 = '0';
 start4 = '0';
-}
-}
+}}
 start1++;
 start2 = '0';
 start3 = '0';
 start4 = '0';
-}
-}
+}}
