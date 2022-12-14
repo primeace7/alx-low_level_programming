@@ -13,7 +13,7 @@ long int sum;
 sum = 0;
 current = 1;
 term0 = 0;
-term1 = 0;
+term1 = 1;
 
 while(current < 4000000)
 {
