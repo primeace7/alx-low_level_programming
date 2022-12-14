@@ -36,7 +36,7 @@ start4++;
 start3++;
 start4 = '0';
 }
-if (start1 == '2' && start2 == '4')
+if (start1 == '2' && start2 == '3')
 return;
 else
 {
