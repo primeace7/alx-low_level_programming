@@ -17,7 +17,13 @@ while (start1 <= stop1)
 {
 while (start2 <= stop2)
 {
+if (start2 *start1 <= '9')
 _putchar(start2);
+else
+{
+_putchar((start1 *start2) / 10);
+_putchar((start1 *start2) % 10);
+}
 if (start2 < '9')
 {
 _putchar(',');
