@@ -22,7 +22,7 @@ while (start2 <= stop2)
 if (count2 * count1 <= 9)
 {
 _putchar(count1 * count2 + '0');
-if (start2 < 9)
+if (start2 < '9')
 {
 _putchar(',');
 _putchar(' ');
