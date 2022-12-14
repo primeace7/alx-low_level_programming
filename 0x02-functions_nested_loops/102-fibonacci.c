@@ -21,4 +21,4 @@ n++;
 printf("%d, ", term);
 
 }
-retrun (0); }
+return (0); }
