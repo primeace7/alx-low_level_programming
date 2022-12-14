@@ -25,5 +25,5 @@ printf("%ld", term);
 count++;
 
 }
-
+return (0);
 }
