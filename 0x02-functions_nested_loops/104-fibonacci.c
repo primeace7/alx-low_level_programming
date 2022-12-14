@@ -23,7 +23,7 @@ term1 =term;
 if (count < 97)
 printf("%.Lf, ", term);
 else
-printf("%.Lf", term);
+printf("%.Lf\n", term);
 count++;
 
 }
