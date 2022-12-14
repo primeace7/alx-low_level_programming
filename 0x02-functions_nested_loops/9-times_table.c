@@ -24,7 +24,7 @@ if (count2 * count1 <= 9)
 _putchar(count1 * count2 + '0');
 _putchar(',');
 _putchar(' ');
-if (((count2 + 1) * count1) > 9)
+if (((count2 + 1) * count1) <= 9)
 _putchar(' ');}
 else
 {
