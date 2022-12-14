@@ -12,8 +12,8 @@ long int term0, term1, current;
 long int sum;
 sum = 0;
 current = 1;
-term0 = 1;
-term1 = 2;
+term0 = 0;
+term1 = 0;
 
 while(current < 4000000)
 {
