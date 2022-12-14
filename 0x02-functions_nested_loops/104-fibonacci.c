@@ -21,9 +21,9 @@ term = term0 + term1;
 term0 = term1;
 term1 =term;
 if (count < 97)
-printf("%.lf, ", term);
+printf("%.Lf, ", term);
 else
-printf("%.lf", term);
+printf("%.Lf", term);
 count++;
 
 }
