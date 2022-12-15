@@ -8,7 +8,7 @@
 */
 int main(void)
 {
-long unsigned double term0, term1, term;
+unsigned int term0, term1, term;
 int count;
 
 term0 = 0;
@@ -22,9 +22,9 @@ term = term0 + term1;
 term0 = term1;
 term1 = term;
 if (count < 97)
-printf("%lu, ", term);
+printf("%u, ", term);
 else
-printf("%lu\n", term);
+printf("%u\n", term);
 count++;
 
 }
