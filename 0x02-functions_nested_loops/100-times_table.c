@@ -9,11 +9,10 @@
 void print_times_table(int n)
 {
 if (n < 0 || n > 15)
-{
 return;
-}
-int count1 = 0;
-int count2 = 0;
+int count1, count2;
+count1 = 0;
+count2 = 0;
 
 while (count1 <= n)
 {
@@ -21,7 +20,7 @@ while (count2 <= n)
 {
 if ((count1 * count2) <= n)
 {
-_putchar((count1 * count2) +'0');
+_putchar((count1 * count2) + '0');
 if (count2 < n)
 {
 _putchar(',');
