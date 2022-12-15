@@ -16,7 +16,7 @@ term1 = 1;
 count = 0;
 
 
-while (count < 9)
+while (count < 98)
 {
 term = term0 + term1;
 term0 = term1;
