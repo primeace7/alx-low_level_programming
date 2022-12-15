@@ -14,7 +14,7 @@ j = 10;
 
 while (j)
 {
-for (count = 0; count < 14; count++)
+for (count = 0; count <= 14; count++)
 {
 i = count;
 if (count > 9)
