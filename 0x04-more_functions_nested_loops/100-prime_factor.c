@@ -9,13 +9,11 @@
 int isprime(int n)
 {
 long int i;
-long int j;
 
 if (n <= 1)
 return (0);
-j = n / 2;
 
-for (i = 1; i <= j; i++)
+for (i = 1; i <= n; i++)
 {
 if (n % i == 0)
 return (0);
@@ -32,10 +30,10 @@ return (1);
 
 int main(void)
 {
-long int i, j;
+long int i;
 long int largest;
-j = 612852475143 / 2;
-for (i = 1; i <= j; i++)
+
+for (i = 1; i <= 612852475143; i++)
 {
 
 if ((isprime(i) == 1) && (612852475143 % i == 0))
