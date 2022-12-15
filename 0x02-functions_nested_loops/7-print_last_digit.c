@@ -15,5 +15,7 @@ int ret;
 hold = n / 10;
 res = hold * 10;
 ret = n - res;
+if (ret < 0)
+ret *= -1;
 return (ret);
 }
