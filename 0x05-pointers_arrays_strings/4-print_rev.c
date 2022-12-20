@@ -27,10 +27,11 @@ void print_rev(char *s)
 		++j;
 	}
 
-	i = 0
+	i = 0;
 
 	while (i <= count)
 	{
 		_putchar(s[i]);
 		i++;
+	}
 }
