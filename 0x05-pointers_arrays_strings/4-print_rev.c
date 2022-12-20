@@ -8,22 +8,23 @@
 
 void print_rev(char *s)
 {
-	int i, count;
+	int i, count, j;
 
 	i = 0;
 	count = 0;
+	j = 0;
 
 	while (s[i] != '\0')
 	{
 		count++;
 		++i;
 	}
+	i = count / 2;
 
-
-	while (count <= 0)
+	while (i >= 0)
 	{
-		_putchar(*(s + count));
-		--count;
+		s[count - j] = s[j]
+		++j;
 
 	}
 }
