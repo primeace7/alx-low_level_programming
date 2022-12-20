@@ -25,6 +25,12 @@ void print_rev(char *s)
 	{
 		s[count - j] = s[j]
 		++j;
-
 	}
+
+	i = 0
+
+	while (i <= count)
+	{
+		_putchar(s[i]);
+		i++;
 }
