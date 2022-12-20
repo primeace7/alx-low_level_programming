@@ -23,7 +23,7 @@ void print_rev(char *s)
 
 	while (i >= 0)
 	{
-		s[count - j] = s[j]
+		s[count - j] = s[j];
 		++j;
 	}
 
