@@ -22,7 +22,8 @@ void print_rev(char *s)
 
 	while (count <= 0)
 	{
-		_putchar('s[count]');
+		i = &s[count];
+		_putchar(i);
 		--count;
 
 	}
