@@ -1,5 +1,5 @@
 #include "main.h"
-
+0;276;0c
 /**
  * rev_string - reverse an input string
  *
@@ -22,11 +22,11 @@ void rev_string(char *s)
 	}
 
 
-	for (j = 0; j <= count / 2; j++)
+	for (j = 0; j <= (count - 1) / 2; j++)
 	{
 		hold = s[j];
-		s[j] = s[count - j];
-		s[count - j] = hold;
+		s[j] = s[(count - 1) - j];
+		s[(count - 1) - j] = hold;
 	}
 
 }
