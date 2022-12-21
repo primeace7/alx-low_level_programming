@@ -15,7 +15,10 @@ void rev_string(char *s)
 	count = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
+	{
 		count++;
+		i++;
+	}
 
 	i = count / 2;
 
