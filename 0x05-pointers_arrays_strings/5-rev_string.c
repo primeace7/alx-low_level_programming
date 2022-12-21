@@ -14,19 +14,20 @@ void rev_string(char *s)
 	char hold;
 
 	count = 0;
+	i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i] != '\0')
 	{
-		count++;
-		i++;
+		++count;
+		++i;
 	}
 
 
-	for (j = 0; j <= (count + 1) / 2; j++)
+	for (j = 0; j <= count / 2; j++)
 	{
 		hold = s[j];
-		s[j] = s[(count + 1) - j];
-		s[(count + 1) - j] = hold;
+		s[j] = s[count - j];
+		s[count - j] = hold;
 	}
 
 }
