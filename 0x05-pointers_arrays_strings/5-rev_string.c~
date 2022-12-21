@@ -1,0 +1,36 @@
+#include "main.h"
+
+/**
+ * count - return the length of a string
+ *
+ * rev_string - reverse an input string
+ *
+ * @s: a pointer to the string to be reversed
+ *Return: nothing (void)
+ */
+
+int count(char *s)
+{
+	int i, count;
+
+	count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+		count++;
+
+	return (count);
+}
+
+void rev_string(char *s)
+{
+	int j;
+
+	count = count(char *s);
+	i = count / 2;
+
+
+	for (j = 0; j <= i; j++)
+	{
+		s[j] = s[count - j];
+	}
+}
