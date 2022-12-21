@@ -20,12 +20,12 @@ void rev_string(char *s)
 		i++;
 	}
 
-	char hold[count + 1];
 
-
-	for (j = 0; j <= count; j++)
+	for (j = 0; j <= count / 2; j++)
 	{
-		hold[j] = s[count - j];
+		hold = s[j];
+		s[j] = s[count - j];
+		s[count - j] = hold;
 	}
 
 	for (j = 0; j <= count; j++)
