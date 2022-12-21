@@ -1,6 +1,6 @@
 #include "main.h"
 
-/**
+0;276;0c/**
  * rev_string - reverse an input string
  *
  * @s: a pointer to the string to be reversed
@@ -11,6 +11,7 @@
 void rev_string(char *s)
 {
 	int i, count, j;
+	char hold;
 
 	count = 0;
 
@@ -28,6 +29,4 @@ void rev_string(char *s)
 		s[count - j] = hold;
 	}
 
-	for (j = 0; j <= count; j++)
-		s[j] = hold[j];
 }
