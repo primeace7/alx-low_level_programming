@@ -20,7 +20,7 @@ void rev_string(char *s)
 		i++;
 	}
 
-	char hold[];
+	char hold[count + 1];
 
 
 	for (j = 0; j <= count; j++)
