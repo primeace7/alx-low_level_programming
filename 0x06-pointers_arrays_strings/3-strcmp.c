@@ -21,22 +21,27 @@ int _strcmp(char *s1, char *s2)
 
 	for (i = 0; stop != 2; i++)
 	{
-		if (!stop1)
+		if (s1[i] != s2[i])
 		{
-			if (s1[i] != '\0')
-				sum1 += (int) s1[i];
+			sum1 += (int) s1[i];
+			sum2 += (int) s2[i];
+			stop = 2;
 		}
-		else
-			stop1 = 1;
 
-		if (!stop2)
+		else if (s1[i] != '\0' && s2[i] == '\0')
 		{
-			if (s2[i] != '\0')
-				sum2 += s2[i];
+			sum1 += 1;
+			stop = 2;
 		}
+
+		else if (s2[i] != '\0' && s1[i] == '\0')
+		{
+			sum2 += 1;
+			stop = 2;
+		}
+
 		else
-			stop2 = 1;
-		stop = stop1 + stop2;
+			stop = 2;
 	}
 
 	return (sum1 - sum2);
