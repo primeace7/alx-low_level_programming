@@ -20,9 +20,9 @@ void puts_half(char *str)
 	}
 
 	if (count % 2 == 0)
-		count = (count - 1) / 2;
+		count /= 2;
 	else
-		count = (count / 2);
+		count = (count + 1) / 2;
 
 
 	for (; str[count] != '\0'; count++)
