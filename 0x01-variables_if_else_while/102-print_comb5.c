@@ -8,6 +8,7 @@
 int main(void)
 {
 	int start1, start2, start3, start4, stop1, stop2, stop3, stop4;
+
 	start1 = '1';
 	start2 = '0';
 	start3 = '0';
@@ -16,6 +17,7 @@ int main(void)
 	stop2 = '9';
 	stop3 = '9';
 	stop4 = '9';
+
 	while (start4 <= stop4)
 	{
 		while (start3 <= stop3)
