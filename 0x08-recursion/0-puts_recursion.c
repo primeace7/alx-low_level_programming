@@ -7,7 +7,7 @@
  * Return: nothing (void)
  */
 
-void puts_recursion(char *s)
+void _puts_recursion(char *s)
 {
 	if (*s == '\n')
 		return;
