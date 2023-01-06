@@ -8,11 +8,9 @@
 
 int is_palindrome(char *s)
 {
-	int len, res, n;
+	int len, res;
 
-	n = 0;
-
-	len = slen(s, n);
+	len = slen(s);
 	res = comp(s, len);
 
 	return (res);
@@ -25,12 +23,12 @@ int is_palindrome(char *s)
  * Return: the length of the string
  */
 
-int slen(char *s, int n)
+int slen(char *s)
 {
 	if (*s == '\0')
-		return (n);
-	++n;
-	return (slen((s + 1), n));
+		return (0);
+
+	return (1 + slen(s + 1));
 }
 
 /**
@@ -42,9 +40,13 @@ int slen(char *s, int n)
 
 int comp(char *s, int n)
 {
-	if (n == 0 || n == 1)
+	if (n == 0)
 		return (1);
-	if (n / 2 && (*s == *(s + n + 1)))
+	if ((n - 1) && (*s == *(s + n - 1)))
+	{
+		if (n == 2 || n == 3)
+			return (1);
 		return (comp(s + 1, n - 2));
+	}
 	return (0);
 }
