@@ -18,7 +18,7 @@ int is_prime_number(int n)
  * Return: 1 if n is prime, 0 otherwise
  */
 
-int go(n, s)
+int go(int n, int s)
 {
 	if (n == 2)
 		return (1);
