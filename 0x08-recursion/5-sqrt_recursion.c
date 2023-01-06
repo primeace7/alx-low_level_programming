@@ -11,12 +11,12 @@ int go(int n, int s)
 {
 	if (s * s == n)
 		return (s);
-	if (s * s > n && ((s - 1) * (s - 1) < n))
-		return (-1);
 	if (s * s > n)
 		return (go(n, s - 1));
 	if (s * s < 1)
 		return (go(n, s + 1));
+
+	return (-1);
 }
 
 /**
