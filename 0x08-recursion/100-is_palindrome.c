@@ -44,7 +44,7 @@ int comp(char *s, int n)
 {
 	if (n == 0 || n == 1)
 		return (1);
-	if (n / 2 && (*s == *s(s + n + 1)))
+	if (n / 2 && (*s == *(s + n + 1)))
 		return (comp(s + 1, n - 2));
 	return (0);
 }
