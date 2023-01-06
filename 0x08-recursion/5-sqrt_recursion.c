@@ -9,7 +9,7 @@
 
 int go(int n, int s)
 {
-	if(n < 0)
+	if (n < 0)
 		return (-1);
 	if (s * s == n)
 		return (s);
@@ -30,12 +30,13 @@ int go(int n, int s)
 int _sqrt_recursion(int n)
 {
 	int s;
+
 	if (n < 100)
 		s = n / 10;
 	else if (n < 1000)
-		 s = n / 30;
+		s = n / 30;
 	else if (n < 10000)
-		s = n / 100;
+		s = n / 90;
 	else if (n < 100000)
 		s = n / 200;
 	else if (n < 1000000)
