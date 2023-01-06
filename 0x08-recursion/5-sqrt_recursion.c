@@ -15,7 +15,7 @@ int go(int n, int s)
 		return (s);
 	if (s * s > n)
 		return (go(n, s - 1));
-	if (s * s < 1)
+	if (s * s < n)
 		return (go(n, s + 1));
 
 	return (-1);
