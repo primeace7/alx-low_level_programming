@@ -9,5 +9,5 @@ int go(int n, int s);
 int is_prime_number(int n);
 int go(int, int);
 int is_palindrome(char *);
-int slen(char *, int);
+int slen(char *);
 int comp(char *, int);
