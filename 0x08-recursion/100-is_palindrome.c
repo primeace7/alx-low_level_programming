@@ -19,7 +19,6 @@ int is_palindrome(char *s)
 /**
  * slen - find the length of a string
  * @s: pointer to the string which length to find
- * @n: placeholder variable to store the string length
  * Return: the length of the string
  */
 
