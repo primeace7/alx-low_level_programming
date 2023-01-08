@@ -1,0 +1,910 @@
+#include "main.h"
+
+/**
+ * main - program starting point
+ *
+ * Return: 0 (Success)
+ */
+int main(void)
+{
+_putchar('_');
+_putchar('p');
+_putchar('u');
+_putchar('t');
+_putchar('c');
+_putchar('h');
+_putchar('a');
+_putchar('r');
+_putchar('\n');
+return (0);
+}
+#include "main.h"
+
+/**
+* _islower - check if the input is a lower case character
+*
+* @c: int
+* Return: int (1 if lower, 0 otherwise)
+*/
+
+int _islower(int c)
+{
+int start;
+int stop;
+
+start = 'a';
+stop = 'z';
+
+while (start <= stop)
+{
+if (start == c)
+return (1);
+start++;
+}
+return (0);
+}
+#include "main.h"
+
+/**
+* _isalpha - check for an alphabetic character, upper or lower case
+*
+* @c: input (int)
+*
+* Return: int (0 or 1)
+*/
+
+int _isalpha(int c)
+{
+int start_upper;
+int stop_upper;
+int start_lower;
+
+start_upper = 'A';
+start_lower = 'a';
+stop_upper = 'Z';
+
+while (start_upper <= stop_upper)
+{
+if (start_upper == c || start_lower == c)
+return (1);
+start_lower++;
+start_upper++;
+}
+return (0);
+}
+#include "main.h"
+
+/**
+* _abs - print the absolute value of the number input
+*
+* @n : input (int)
+*
+* Return: absolute value of the input
+*/
+int _abs(int n)
+{
+if (n >= 0)
+return (n);
+else
+return (-1 * n);
+}
+#include "main.h"
+
+/**
+* _isupper - checks for upper case input
+*
+* @c: input character to check
+*
+* Return: 1 if c is uppercase, 0 otherwise
+*/
+int _isupper(int c)
+{
+
+if (c >= 'A' && c <= 'Z')
+return (1);
+else
+return (0);
+}
+#include "main.h"
+
+/**
+* _isdigit - check if input is a digit
+*
+* @c: input to check
+*
+* Return: 1, if c is a digit, or 0 otherwise
+*/
+int _isdigit(int c)
+{
+if (c >= '0' && c <= '9')
+return (1);
+else
+return (0);
+
+}
+#include "main.h"
+
+/**
+ * _strlen - find and return the length of a string
+ * @s: the string whose length is to be found
+ * Return: the length of the string
+ */
+
+int _strlen(char *s)
+{
+	int i, count;
+
+	i = 0;
+	count = 0;
+
+	while (s[i] != '\0')
+	{
+		++count;
+		++i;
+	}
+	return (count);
+
+}
+#include "main.h"
+
+/**
+ * _puts - print a string of characters followed by a newline
+ * @str: the string variable to print
+ * Return: nothing(void)
+ */
+
+void _puts(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		++i;
+	}
+	_putchar('\n');
+}
+#include "main.h"
+
+/**
+ * puts2 - print every other character of a string,
+ * starting with the first character
+ * @str: a char pointer to the string to print
+ * Return: nothing(void);
+ */
+
+void puts2(char *str)
+{
+	int i;
+
+	i = 0;
+
+	if (str[i] != 0)
+	{
+		_putchar(str[i]);
+		i += 2;
+	}
+
+	while (str[i] != '\0' && str[i - 1] != '\0')
+	{
+		_putchar(str[i]);
+		i += 2;
+	}
+	_putchar('\n');
+}
+#include "main.h"
+
+/**
+ * puts_half - prints half of a string
+ * @str: a pointer to the string to print
+ * Return: nothing (void)
+ */
+
+void puts_half(char *str)
+{
+	int i, count;
+
+	i = 0;
+	count = 0;
+
+	while (str[i] != '\0')
+	{
+		count++;
+		i++;
+	}
+
+	if (count % 2 == 0)
+		count /= 2;
+	else
+		count = (count + 1) / 2;
+
+
+	for (; str[count] != '\0'; count++)
+		_putchar(str[count]);
+	_putchar('\n');
+}
+#include "main.h"
+
+/**
+ * puts_half - prints half of a string
+ * @str: a pointer to the string to print
+ * Return: nothing (void)
+ */
+
+void puts_half(char *str#include "main.h"
+
+/**
+ * _strlen - find and return the length of a string
+ * @s: the string whose length is to be found
+ * Return: the length of the string
+ */
+
+int _strlen(char *s)
+{
+	int i, count;
+
+	i = 0;
+	count = 0;
+
+	while (s[i] != '\0')
+	{
+		++count;
+		++i;
+	}
+	return (count);
+
+}
+#include "main.h"
+
+/**
+ * _puts - print a string of characters followed by a newline
+ * @str: the string variable to print
+ * Return: nothing(void)
+ */
+
+void _puts(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		_putchar(str[i]);
+		++i;
+	}
+	_putchar('\n');
+}
+#include "main.h"
+
+/**
+ * puts2 - print every other character of a string,
+ * starting with the first character
+ * @str: a char pointer to the string to print
+ * Return: nothing(void);
+ */
+
+void puts2(char *str)
+{
+	int i;
+
+	i = 0;
+
+	if (str[i] != 0)
+	{
+		_putchar(str[i]);
+		i += 2;
+	}
+
+	while (str[i] != '\0' && str[i - 1] != '\0')
+	{
+		_putchar(str[i]);
+		i += 2;
+	}
+	_putchar('\n');
+}
+#include "main.h"
+
+/**
+ * puts_half - prints half of a string
+ * @str: a pointer to the string to print
+ * Return: nothing (void)
+ */
+
+void puts_half(char *str)
+{
+	int i, count;
+
+	i = 0;
+	count = 0;
+
+	while (str[i] != '\0')
+	{
+		count++;
+		i++;
+	}
+
+	if (count % 2 == 0)
+		count /= 2;
+	else
+		count = (count + 1) / 2;
+
+
+	for (; str[count] != '\0'; count++)
+		_putchar(str[count]);
+	_putchar('\n');
+}
+#include "main.h"
+
+/**
+ * puts_half - prints half of a string
+ * @str: a pointer to the string to print
+ * Return: nothing (void)
+ */
+
+void puts_half(char *str#include "main.h"
+
+/**
+ * _strcpy - copy a string from src to dest
+ * @src: a pointer to the source of the string to copy
+ * @dest: a pointer to the destination to copy to
+ * Return: a pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != 0; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[i] = '\0';
+
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strcat - concatenate two strings
+ * @dest: the destination string
+ * @src: the source string
+ * Return: a pointer to dest
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	for (i = 0; dest[i] != '\0'; i++)
+		count++;
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[count + i] = src[i];
+	}
+
+	dest[count + i] = '\0';
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strncat - concatenate two strings
+ * @dest: the destination string
+ * @src: the source string
+ * @n: the number of bytes to concatenate from src to dest
+ * Return: a pointer to dest
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	for (i = 0; dest[i] != '\0'; i++)
+		count++;
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[count + i] = src[i];
+	}
+
+	dest[count + i] = '\0';
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strcat - concatenate two strings
+ * @dest: the destination string
+ * @src: the source string
+ * Return: a pointer to dest
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	for (i = 0; dest[i] != '\0'; i++)
+		count++;
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[count + i] = src[i];
+	}
+
+	dest[count + i] = '\0';
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strcmp - compare two strings
+ * @s1: the first string to compare
+ * @s2: the second string to compare
+ * Return: the difference between s1 and s2 as
+ * an integer
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int stop1, stop2, i, sum1, sum2;
+	int stop;
+
+	stop1 = 0;
+	stop2 = 0;
+	sum1 = 0;
+	sum2 = 0;
+	stop = stop1 + stop2;
+
+	for (i = 0; stop != 2; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			sum1 += (int) s1[i];
+			sum2 += (int) s2[i];
+			stop = 2;
+		}
+
+		else if (s1[i] != '\0' && s2[i] == '\0')
+		{
+			sum1 += 1;
+			stop = 2;
+		}
+
+		else if (s2[i] != '\0' && s1[i] == '\0')
+		{
+			sum2 += 1;
+			stop = 2;
+		}
+
+		else if (s1[i] == 0 && s2[i] == 0)
+			stop = 2;
+	}
+
+	return (sum1 - sum2);
+}
+#include "main.h"
+
+/**
+ * strcmp - compare two strings
+ * @s1: the first string to compare
+ * @s2: the second string to compare
+ * Return: the difference between s1 and s2 as
+ * an integer
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int stop1, stop2, i, sum1, sum2;
+	int stop;
+
+	stop1 = 0;
+	stop2 = 0;
+	sum1 = 0;
+	sum2 = 0;
+	stop = stop1 + stop2;
+
+	for (i = 0; stop != 2; i++)
+	{
+		if (!stop1)
+		{
+			if (s1[i] != '\0')
+				sum1 += (int) s1[i];
+		}
+		else
+			stop1 = 1;
+
+		if (!stop2)
+		{
+			if (s2[i] != '\0')
+				sum2 += s2[i];
+		}
+		else
+			stop2 = 1;
+		stop = stop1 + stop2;
+	}
+
+	return (sum1 - sum2);
+}
+#include "main.h"
+
+/**
+ * _strcat - concatenate two strings
+ * @dest: the destination string
+ * @src: the source string
+ * Return: a pointer to dest
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	for (i = 0; dest[i] != '\0'; i++)
+		count++;
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[count + i] = src[i];
+	}
+
+	dest[count + i] = '\0';
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strncat - concatenate two strings
+ * @dest: the destination string
+ * @src: the source string
+ * @n: the number of bytes to concatenate from src to dest
+ * Return: a pointer to dest
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	for (i = 0; dest[i] != '\0'; i++)
+		count++;
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[count + i] = src[i];
+	}
+
+	dest[count + i] = '\0';
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strcat - concatenate two strings
+ * @dest: the destination string
+ * @src: the source string
+ * Return: a pointer to dest
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int i;
+	int count;
+
+	count = 0;
+
+	for (i = 0; dest[i] != '\0'; i++)
+		count++;
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[count + i] = src[i];
+	}
+
+	dest[count + i] = '\0';
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strncpy - copy a string from src to dest
+ * @dest: the destination to copy to
+ * @src: the source to copy from
+ * @n: the number of bytes to copy
+ * Return: pointer to dest
+ */
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	int i;
+
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	for (; i < n; i++)
+		dest[i] = '\0';
+
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * _strcmp - compare two strings
+ * @s1: the first string to compare
+ * @s2: the second string to compare
+ * Return: the difference between s1 and s2 as
+ * an integer
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int stop1, stop2, i, sum1, sum2;
+	int stop;
+
+	stop1 = 0;
+	stop2 = 0;
+	sum1 = 0;
+	sum2 = 0;
+	stop = stop1 + stop2;
+
+	for (i = 0; stop != 2; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			sum1 += (int) s1[i];
+			sum2 += (int) s2[i];
+			stop = 2;
+		}
+
+		else if (s1[i] != '\0' && s2[i] == '\0')
+		{
+			sum1 += 1;
+			stop = 2;
+		}
+
+		else if (s2[i] != '\0' && s1[i] == '\0')
+		{
+			sum2 += 1;
+			stop = 2;
+		}
+
+		else if (s1[i] == 0 && s2[i] == 0)
+			stop = 2;
+	}
+
+	return (sum1 - sum2);
+}
+#include "main.h"
+
+/**
+ * strcmp - compare two strings
+ * @s1: the first string to compare
+ * @s2: the second string to compare
+ * Return: the difference between s1 and s2 as
+ * an integer
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int stop1, stop2, i, sum1, sum2;
+	int stop;
+
+	stop1 = 0;
+	stop2 = 0;
+	sum1 = 0;
+	sum2 = 0;
+	stop = stop1 + stop2;
+
+	for (i = 0; stop != 2; i++)
+	{
+		if (!stop1)
+		{
+			if (s1[i] != '\0')
+				sum1 += (int) s1[i];
+		}
+		else
+			stop1 = 1;
+
+		if (!stop2)
+		{
+			if (s2[i] != '\0')
+				sum2 += s2[i];
+		}
+		else
+			stop2 = 1;
+		stop = stop1 + stop2;
+	}
+
+	return (sum1 - sum2);
+}
+#include "main.h"
+
+/**
+ * _memset - fill the first n bytes of a memory location with constant bytes
+ * @s: the memory location to be filled
+ * @b: the constant byte to fill with
+ * @n: the number of bytes to fill at location s
+ * Return: a pointer to memory location s
+ */
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+
+	return (s);
+}
+#include "main.h"
+
+/**
+ * _memcpy - copy n bytes from source memory location to destination
+ * @src: the source memory location to copy from
+ * @dest: the destination memory location to copy to
+ * @n: the number of byte to copy from src to dest
+ * Return: a pointer to dest
+*/
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	return (dest);
+}
+#include "main.h"
+
+/**
+ * set_string - set the value of a pointer to a char
+ * @s: the pointer to be set
+ * @to: the char to set with
+ * Return: nothing(void)
+ */
+
+void set_string(char **s, char *to)
+{
+	*s = to;
+}
+#include "main.h"
+#include <stddef.h>
+
+/**
+ * _strchr - locate a character in a string
+ * @s: the string where a character is to be located
+ * @c: the character to be located in the string
+ * Return: a pointer to the first occurrence of the character in the string
+ */
+
+char *_strchr(char *s, char c)
+{
+	unsigned int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+
+	{
+		if (s[i] == c)
+			return (&s[i]);
+	}
+
+	if (s[i] == '\0' && s[i] == c)
+		return (&s[i]);
+
+	return (NULL);
+}
+#include "main.h"
+
+/**
+ * _strspn - get the length of a prefix substring
+ * @s: the string to be checked
+ * @accept: the substring to be checked for
+ * Return: the length of the prefix substring found
+ */
+
+unsigned int _strspn(char *s, char *accept)
+{
+	unsigned int count;
+	int i, j, check;
+
+	count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		check = 1;
+
+		for (j = 0; accept[j] != '\0' && check == 1; j++)
+		{
+			if (s[i] == accept[j])
+			{
+				++count;
+				check = 0;
+			}
+		}
+
+		if (check)
+			return (count);
+	}
+
+	return (count);
+}
+#include "main.h"
+#include <stddef.h>
+
+/**
+ * _strpbrk - search a string for any set of bytes
+ * @s: the string to be seached
+ * @accept: the set of bytes to be searched for
+ * Return: a pointer to the byte in s that matches any byte in accept
+ */
+
+char *_strpbrk(char *s, char *accept)
+{
+	unsigned int i, j;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+				return (&s[i]);
+		}
+	}
+
+	return (NULL);
+}
+#include "main.h"
+#include <stddef.h>
+
+/**
+ * _strstr - find a substring within another string
+ * @needle: the substring to be found
+ * @haystack: the string to be searched for a substring
+ * Return: a pointer to the of the located substring within the larger string,
+ * or NULL, if the substring is not found
+ */
+
+char *_strstr(char *needle, char *haystack)
+{
+	unsigned int i, j, check;
+
+	check = 1;
+
+	if (needle[0] == '\0')
+		return (&haystack[0]);
+
+	for (i = 0; haystack[i] != '\0'; i++)
+	{
+		if (needle[0] == haystack[i])
+		{
+			for (j = 0; needle[j] != '\0' && check; j++)
+			{
+				if (needle[j] == haystack[i + j])
+					check = 1;
+				else
+					check = 0;
+			}
+
+			if (needle[j] == '\0')
+				return (&haystack[i]);
+		}
+	}
+
+	return (NULL);
+}
+
+int _atoi(char *s)
+{
+	return;
+}
