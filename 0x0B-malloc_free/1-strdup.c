@@ -45,11 +45,10 @@ int slen(char *s)
 void scpy(char *a, char *b)
 {
 	if (*a == '\0')
+		*b = *a;
+	else
 	{
 		*b = *a;
-		return;
+		(scpy(a + 1, b + 1));
 	}
-
-	*b = *a;
-	return (scpy(a + 1, b + 1));
 }
