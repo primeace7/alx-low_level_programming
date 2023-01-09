@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * str_concat - concatenate two strings in a third string
@@ -21,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 	if (s == NULL)
 		return (NULL);
 
-	scart(s1, s2, s);
+	scat(s1, s2, s);
 
 	return (s);
 }
@@ -47,7 +49,7 @@ int slen(char *s)
  * Return: nothing
  */
 
-scat(char *a, char *b, char *c)
+void scat(char *a, char *b, char *c)
 {
 	if (*a == NULL)
 		*c = '';
