@@ -11,7 +11,7 @@
  * the array creation failed
  */
 
-char *creae_array(unsigned int size, char c)
+char *create_array(unsigned int size, char c)
 {
 	char *s;
 	unsigned int i;
