@@ -66,6 +66,7 @@ void scat(char *a, char *b, char *c)
 			*c = *a;
 			scat(a + 1, b, c + 1);
 		}
+	}
 	else if (*a != '\0')
 	{
 		*c = *a;
