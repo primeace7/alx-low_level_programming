@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	sum = (long int)*argv[1] + (long int)*argv[2];
+	sum = (long int) atoi(argv[1]) * (long int) atoi(argv[2]);
 	printf("%ld\n", sum);
 
 	return (0);
