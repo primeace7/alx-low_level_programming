@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv)
 {
-	int sum;
+	long int sum;
 
 	if (argc != 3)
 	{
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	sum = (int)*argv[1] + (int)*argv[2];
+	sum = (long int)*argv[1] + (long int)*argv[2];
 	printf("%d\n", sum);
 
 	return (0);
