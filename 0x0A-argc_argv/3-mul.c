@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	}
 
 	sum = (long int)*argv[1] + (long int)*argv[2];
-	printf("%d\n", sum);
+	printf("%ld\n", sum);
 
 	return (0);
 }
