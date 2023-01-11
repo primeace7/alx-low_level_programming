@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 	}
 	if (change == 1)
 		count += 1;
-	printf("%d\n", count);
+	if (chage != 0)
+		printf("%d\n", count);
 	return (0);
 }
