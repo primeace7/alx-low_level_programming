@@ -12,15 +12,18 @@ int main(int argc, char **argv)
 {
 	int count, change;
 
-	count = 0;
-	change = (int)atoi(argv[1]);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	count = 0;
+        change = atoi(argv[1]);
 	if (atoi(argv[1]) <= 0)
+	{
 		printf("%d\n", 0);
+		return (0);
+	}
 	while (change >= 25)
 	{
 		count += change / 25;
@@ -43,7 +46,6 @@ int main(int argc, char **argv)
 	}
 	if (change == 1)
 		count += 1;
-	if (change != 0)
-		printf("%d\n", count);
+	printf("%d\n", count);
 	return (0);
 }
