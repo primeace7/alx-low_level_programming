@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	count = 0;
-        change = atoi(argv[1]);
+	change = atoi(argv[1]);
 	if (atoi(argv[1]) <= 0)
 	{
 		printf("%d\n", 0);
