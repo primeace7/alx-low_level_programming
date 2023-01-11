@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 	if (s == NULL)
 		return (NULL);
 
-	concat_str(s1, s2, s);
+	concat_st(s1, s2, s);
 
 	return (s);
 }
@@ -42,45 +42,45 @@ int slen(char *s)
 }
 
 /**
- * concat_str - concatenate two strings into a third one
+ * concat_st - concatenate two strings into a third one
  * @s1: pointer to the first string
  * @s2: pointer to the second string
  * @s: pointer to the destination string
  * Return: nothing
  */
 
-void concat_str(char *s1, char *s2, char *s)
+void concat_st(char *st1, char *st2, char *s)
 {
 	int all_null, s1_null, s2_null;
 
-	s1 == NULL ? s1_null = 1 : s1_null = 0;
-	s2 == NULL ? s2_null = 1 : s2_null = 0;
-	s1 == NULL && s2 == NULL ? all_null = 1 : all_null = 0;
+        s1_null = st1 == NULL ? 1 : 0;
+	s2_null = st2 == NULL ? 1 : 0;
+	all_null = (st1 == NULL && st2 == NULL) ? 1 : 0;
 
 	if (all_null)
 		*s = '\0';
-	else if (s1_null && *s2 != '\0')
+	else if (s1_null && *st2 != '\0')
 	{
-		*s = *s2;
-		concat_str(s1, s2 + 1, s + 1);
+		*s = *st2;
+		concat_st(st1, st2 + 1, s + 1);
 	}
-	else if (s2_null && s1 != '\0')
+	else if (s2_null && *st1 != '\0')
 	{
-		*s = *s1;
-		concat_str(s1 + 1, s2, s + 1);
+		*s = *st1;
+		concat_st(st1 + 1, st2, s + 1);
 	}
 
 	if (!(s1_null || s2_null))
 	{
-		if (*s1 != '\0')
+		if (*st1 != '\0')
 		{
-			*s = *s1;
-			concat_str(s1 + 1, s2, s + 1);
+			*s = *st1;
+			concat_st(st1 + 1, st2, s + 1);
 		}
-		if (*s2 != '\0')
+		if (*st2 != '\0')
 		{
-			*s = *s2;
-			concat_str(s1, s2 + 1, s + 1);
+			*s = *st2;
+			concat_st(st1, st2 + 1, s + 1);
 		}
 	}
 	if (!(all_null))
