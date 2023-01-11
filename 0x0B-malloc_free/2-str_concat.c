@@ -51,33 +51,40 @@ int slen(char *s)
 
 void scat(char *a, char *b, char *c)
 {
-	if ( a == NULL)
+	if (a == NULL || b == NULL)
 	{
-		if (*b != '\0')
+		if (a == NULL && b == NULL)
+			*c = '\0';
+		else if (a == NULL)
 		{
-			*c = *b;
-			scat(a, b + 1, c + 1);
+			if (*b != '\0')
+			{
+				*c = *b;
+				scat(a, b + 1, c + 1);
+			}
+		}
+		else if (b == NULL)
+		{
+			if (*a != '\0')
+			{
+				*c = *a;
+				scat(a + 1, b, c + 1);
+			}
 		}
 	}
-	else if (b == NULL)
+	else
 	{
 		if (*a != '\0')
 		{
 			*c = *a;
 			scat(a + 1, b, c + 1);
 		}
-	}
-	else if (*a != '\0')
-	{
-		*c = *a;
-		scat(a + 1, b, c + 1);
-	}
 
-	else if (*b != '\0')
-	{
-		*c = *b;
-		scat(a, b + 1, c + 1);
+		if (*b != '\0')
+		{
+			*c = *b;
+			scat(a, b + 1, c + 1);
+		}
+		*(c + 1) = '\0';
 	}
-
-	*(c + 1) = '\0';
 }
