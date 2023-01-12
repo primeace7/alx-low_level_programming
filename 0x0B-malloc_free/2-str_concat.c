@@ -20,8 +20,8 @@ char *str_concat(char *s1, char *s2)
 	dest = malloc(len3 * sizeof(char));
 	if (dest == NULL)
 		return (NULL);
-	s1_null = (is_null(s1) && !(is_null(s2)));
-	s2_null = (is_null(s2) && !(is_null(s1)));
+	s1_null = (is_null(s1));
+	s2_null = (is_null(s2));
 	all_null = (is_null(s1) && is_null(s2));
 
 	if (all_null)
