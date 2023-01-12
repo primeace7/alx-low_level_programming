@@ -32,12 +32,12 @@ char *str_concat(char *s1, char *s2)
 		*dest = '\0';
 		return (dest);
 	}
-	if (s1_null)
+	if (s1_null && *s2 != '\0')
 	{
 		scopy(s1, dest);
 		return (dest);
 	}
-	if (s2_null)
+	if (s2_null && *s1 != '\0')
 	{
 		scopy(s1, dest);
 		return (dest);
