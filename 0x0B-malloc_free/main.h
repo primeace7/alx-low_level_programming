@@ -5,6 +5,6 @@ int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 char *create_array(unsigned int size, char c);
 int slen(char *);
-void scpy(char *, char *);
+void scopy(char *, char *);
 int is_null(char *);
 char *str_concat(char *, char*);
