@@ -29,20 +29,20 @@ char *str_concat(char *s1, char *s2)
 		*dest = '\0';
 		return (dest);
 	}
-	if (s1_null && *s2 != '\0')
+	if (s1_null || *s1 == '\0')
+	{
+		scopy(s2, dest);
+		return (dest);
+	}
+	if (s2_null || *s2 == '\0')
 	{
 		scopy(s1, dest);
 		return (dest);
 	}
-	if (s2_null && *s1 != '\0')
-	{
-		scopy(s1, dest);
-		return (dest);
-	}
-	if (*s1 != '\0')
-		scopy(s1, dest);
-	if (*s2 != '\0')
-		scopy(s2, dest + len1 + 1);
+
+	scopy(s1, dest);
+	scopy(s2, dest + len1 + 1);
+
 	return (dest);
 }
 
