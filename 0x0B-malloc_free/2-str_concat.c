@@ -17,12 +17,9 @@ char *str_concat(char *s1, char *s2)
 	len1 = slen(s1);
 	len2 = slen(s2);
 	len3 = len1 + len2 + 1;
-
 	dest = malloc(len3 * sizeof(char));
-
 	if (dest == NULL)
 		return (NULL);
-
 	s1_null = (is_null(s1) && !(is_null(s2)));
 	s2_null = (is_null(s2) && !(is_null(s1)));
 	all_null = (is_null(s1) && is_null(s2));
@@ -42,8 +39,10 @@ char *str_concat(char *s1, char *s2)
 		scopy(s1, dest);
 		return (dest);
 	}
-	scopy(s1, dest);
-	scopy(s2, dest + len1 + 1);
+	if (*s1 != '\0')
+		scopy(s1, dest);
+	if (*s2 != '\0')
+		scopy(s2, dest + len1 + 1);
 	return (dest);
 }
 
