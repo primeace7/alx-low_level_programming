@@ -1,0 +1,30 @@
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * alloc_grid - create a 2d array initialized with zeros and return a
+ * pointer to it
+ * @width: the width of the array to create
+ * @height: the height of the array to create
+ * Return: a pointer to the initialized array
+ */
+
+int **alloc_grid(int width, int height)
+{
+	int size, i, j;
+	int *array[];
+
+	size = width * height;
+	array = malloc(size * sizeof(int));
+
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
+		{
+			array[i][j] = 0;
+		}
+	}
+
+	return (array);
+}
