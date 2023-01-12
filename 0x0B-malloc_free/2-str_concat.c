@@ -29,12 +29,12 @@ char *str_concat(char *s1, char *s2)
 		*dest = '\0';
 		return (dest);
 	}
-	if (s1_null || *s1 == '\0')
+	if (s1 == NULL|| *s1 == '\0')
 	{
 		scopy(s2, dest);
 		return (dest);
 	}
-	if (s2_null || *s2 == '\0')
+	if (s2 = NULL || *s2 == '\0')
 	{
 		scopy(s1, dest);
 		return (dest);
@@ -85,7 +85,7 @@ void scopy(char *s, char *d)
 
 int is_null(char *s)
 {
-	if (s == 0)
+	if (s == NULL)
 		return (1);
 	else
 		return (0);
