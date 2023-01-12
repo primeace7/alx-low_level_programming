@@ -11,21 +11,40 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int len1, len2, len3;
-	char *s;
+	int len1, len2, len3, s1_null, s2_null, all_null;
+	char *dest;
 
 	len1 = slen(s1);
 	len2 = slen(s2);
 	len3 = len1 + len2 + 1;
 
-	s = malloc(len3 * sizeof(char));
+	dest = malloc(len3 * sizeof(char));
 
-	if (s == NULL)
+	if (dest == NULL)
 		return (NULL);
 
-	concat_st(s1, s2, s);
+	s1_null = (is_null(s1) && !(is_null(s2)));
+	s2_null = (is_null(s2) && !(is_null(s1)));
+	all_null = (is_null(s1) && is_null(s2));
 
-	return (s);
+	if (all_null)
+	{
+		*dest = '\0';
+		return (dest);
+	}
+	if (s1_null)
+	{
+		scopy(s1, dest);
+		return (dest);
+	}
+	if (s2_null)
+	{
+		scopy(s1, dest);
+		return (dest);
+	}
+	scopy(s1, dest);
+	scopy(s2, dest + len1 + 1);
+	return (dest);
 }
 
 /**
@@ -36,53 +55,39 @@ char *str_concat(char *s1, char *s2)
 
 int slen(char *s)
 {
-	if (*s == '\0')
+	if (*s == '\0' || s == NULL)
 		return (0);
 	return (1 + slen(s + 1));
 }
 
 /**
- * concat_st - concatenate two strings into a third one
- * @s1: pointer to the first string
- * @s2: pointer to the second string
- * @s: pointer to the destination string
+ * scopy - copy a string from one memory location to another
+ * @s: pointer to the source string
+ * @d: pointer to the destination string
  * Return: nothing
  */
 
-void concat_st(char *st1, char *st2, char *s)
+void scopy(char *s, char *d)
 {
-	int all_null, s1_null, s2_null;
-
-        s1_null = st1 == NULL ? 1 : 0;
-	s2_null = st2 == NULL ? 1 : 0;
-	all_null = (st1 == NULL && st2 == NULL) ? 1 : 0;
-
-	if (all_null)
-		*s = '\0';
-	else if (s1_null && *st2 != '\0')
+	if (*s == '\0')
+		*d = *s;
+	else
 	{
-		*s = *st2;
-		concat_st(st1, st2 + 1, s + 1);
+		*d = *s;
+		scopy(s + 1, d + 1);
 	}
-	else if (s2_null && *st1 != '\0')
-	{
-		*s = *st1;
-		concat_st(st1 + 1, st2, s + 1);
-	}
+}
 
-	if (!(s1_null || s2_null))
-	{
-		if (*st1 != '\0')
-		{
-			*s = *st1;
-			concat_st(st1 + 1, st2, s + 1);
-		}
-		if (*st2 != '\0')
-		{
-			*s = *st2;
-			concat_st(st1, st2 + 1, s + 1);
-		}
-	}
-	if (!(all_null))
-		*s = '\0';
+/**
+ * is_null - check if a string is null
+ * @s: pointer to the string to check
+ * Return: 1 if the string is null, 0 otherwise
+ */
+
+int is_null(char *s)
+{
+	if (s == NULL)
+		return (1);
+	else
+		return (0);
 }
