@@ -41,7 +41,7 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	scopy(s1, dest);
-	scopy(s2, dest + len1 + 1);
+	scopy(s2, dest + len1);
 
 	return (dest);
 }
