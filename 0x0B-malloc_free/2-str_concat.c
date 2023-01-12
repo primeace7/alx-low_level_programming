@@ -85,7 +85,7 @@ void scopy(char *s, char *d)
 
 int is_null(char *s)
 {
-	if (s == (char)NULL)
+	if (s == "NULL")
 		return (1);
 	else
 		return (0);
