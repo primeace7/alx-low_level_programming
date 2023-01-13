@@ -25,10 +25,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	for (i = 0; i < nmemb; i++)
 	{
-		if (size == 1)
-			spaces[i] = '0';
-		else
-			spaces[i] = 0;
+		spaces[i] = 0;
 	}
 
 	ret = spaces;
