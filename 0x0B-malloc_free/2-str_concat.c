@@ -46,8 +46,14 @@ char *str_concat(char *s1, char *s2)
 
 int slen(char *s)
 {
-	if (*s == '\0' || s == NULL)
+	int i, count;
+
+	if (s == NULL)
 		return (0);
-	else
-		return (1 + slen(s + 1));
+	count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+		count ++;
+
+	return (count);
 }
