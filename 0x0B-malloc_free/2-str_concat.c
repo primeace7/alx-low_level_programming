@@ -48,5 +48,6 @@ int slen(char *s)
 {
 	if (*s == '\0' || s == NULL)
 		return (0);
-	return (1 + slen(s + 1));
+	else
+		return (1 + slen(s + 1));
 }
