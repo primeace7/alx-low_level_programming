@@ -17,7 +17,7 @@ char *str_concat(char *s1, char *s2)
 	len1 = slen(s1);
 	len2 = slen(s2);
 	len3 = len1 + len2 + 1;
-	dest = malloc(len3 * sizeof(char));
+	dest = malloc(len3 * sizeof(*dest));
 	if (dest == NULL)
 		return (NULL);
 	s1_null = is_null(s1);
@@ -68,13 +68,11 @@ int slen(char *s)
 
 void scopy(char *s, char *d)
 {
-	if (*s == '\0')
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
 		*d = *s;
-	else
-	{
-		*d = *s;
-		scopy(s + 1, d + 1);
-	}
+	*d = *s;
 }
 
 /**
