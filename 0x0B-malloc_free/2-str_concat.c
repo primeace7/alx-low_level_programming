@@ -71,8 +71,8 @@ void scopy(char *s, char *d)
 	int i;
 
 	for (i = 0; s[i] != '\0'; i++)
-		*d = s[i];
-	*d = s[i];
+		d[i] = s[i];
+	d[i] = s[i];
 }
 
 /**
