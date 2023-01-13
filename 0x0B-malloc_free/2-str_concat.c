@@ -11,38 +11,31 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int len1, len2, len3, s1_null, s2_null, all_null;
+	int lencat, i, j;
 	char *dest;
 
-	len1 = slen(s1);
-	len2 = slen(s2);
-	len3 = len1 + len2 + 1;
-	dest = malloc(len3 * sizeof(*dest));
+	lencat = slen(s1);
+	lencat = lencat + slen(s2) + 1;
+
+	dest = malloc(lencat * sizeof(*dest));
 	if (dest == NULL)
 		return (NULL);
-	s1_null = is_null(s1);
-	s2_null = is_null(s2);
-	all_null = (is_null(s1) && is_null(s2));
-
-	if (all_null)
+	if (s1 == NULL)
+		lencat += 0;
+	else
 	{
-		*dest = '\0';
-		return (dest);
+		for (i = 0; s1[i] != '\0'; i++)
+			dest[i] = s1[i];
 	}
-	if (s1_null || *s1 == '\0')
+	if (s2 == NULL)
+		lencat += 0;
+	else
 	{
-		scopy(s2, dest);
-		return (dest);
+		for (j = 0; s2[j] != '\0'; j++)
+			s[i + j] = s2[j];
 	}
-	if (s2_null || *s2 == '\0')
-	{
-		scopy(s1, dest);
-		return (dest);
-	}
-
-	scopy(s1, dest);
-	scopy(s2, dest + len1);
-
+	if (s1 != NULL || s2 != NULL)
+		s[i + j] = '\0';
 	return (dest);
 }
 
@@ -57,34 +50,4 @@ int slen(char *s)
 	if (*s == '\0' || s == NULL)
 		return (0);
 	return (1 + slen(s + 1));
-}
-
-/**
- * scopy - copy a string from one memory location to another
- * @s: pointer to the source string
- * @d: pointer to the destination string
- * Return: nothing
- */
-
-void scopy(char *s, char *d)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		d[i] = s[i];
-	d[i] = s[i];
-}
-
-/**
- * is_null - check if a string is null
- * @s: pointer to the string to check
- * Return: 1 if the string is null, 0 otherwise
- */
-
-int is_null(char *s)
-{
-	if (s == NULL)
-		return (1);
-	else
-		return (0);
 }
