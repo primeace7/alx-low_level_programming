@@ -1,4 +1,4 @@
-#inlcude "main.h"
+#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -12,7 +12,8 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int space, i;
-	void *spaces;
+	int *spaces;
+	void *ret;
 
 	space = size * nmemb;
 
@@ -22,8 +23,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	spaces = malloc(space);
 	if (spaces == NULL)
 		return (NULL);
-	for (i = 0; i < space; i++)
+	for (i = 0; i < nmemb; i++)
 		spaces[i] = 0;
 
-	return (spaces);
+	ret = spaces;
+	return (ret);
 }
