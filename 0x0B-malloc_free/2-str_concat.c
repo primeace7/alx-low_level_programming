@@ -14,6 +14,8 @@ char *str_concat(char *s1, char *s2)
 	int lencat, i, j;
 	char *dest;
 
+	i = 0;
+	j = 0;
 	lencat = slen(s1);
 	lencat = lencat + slen(s2) + 1;
 
@@ -53,7 +55,7 @@ int slen(char *s)
 	count = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
-		count ++;
+		count++;
 
 	return (count);
 }
