@@ -15,23 +15,21 @@ char *argstostr(int argc, char **argv)
 	int count, size;
 	char *str;
 
+
+	size = 0;
 	if (argc == 0 || argv == NULL)
 		return (NULL);
-	/* add 1 to slen(argv[1] to accomodate newline*/
-	size = 1 + (slen(argv[1]) * sizeof(*argv[1]));
-	str = malloc(size);
+
+	str = malloc(1);
 	if (str == NULL)
 		return (NULL);
-	/* copy the first argument into new string and add newline*/
-	scopy(argv[1], str);
-	scopy("\n", str);
 	/**
 	 * calculate  the size in bytes of the first argument and store
 	 * for future increments
 	 */
-	for (count = 2; count < argc; ++count)
+	for (count = 0; count < argc; ++count)
 	{
-		size = size + (sizeof(*argv[count]) * slen(argv[count])) + 1;
+		size = size + (sizeof(*(argv[count])) * slen(argv[count])) + 1;
 		str = realloc(str, size);
 		if (str == NULL)
 		{
@@ -41,13 +39,7 @@ char *argstostr(int argc, char **argv)
 		scopy(argv[count], str);
 		scopy("\n", str);
 	}
-	size += 1;
-	str = realloc(str, size);
-	if (str == NULL)
-	{
-		free(str);
-		return (NULL);
-	}
+
 	scopy("\0", str);
 	return (str);
 }
