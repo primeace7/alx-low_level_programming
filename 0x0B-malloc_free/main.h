@@ -8,3 +8,6 @@ int slen(char *);
 void scopy(char *, char *);
 int is_null(char *);
 char *str_concat(char *, char*);
+char *argstostr(int ac, char **av);
+int slen(char *);
+void scopy(char *, char *);
