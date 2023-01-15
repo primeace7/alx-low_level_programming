@@ -14,7 +14,7 @@ int **alloc_grid(int width, int height)
 {
 	int i, j;
 	int *array;
-	int **pt;-Wall -Werror -Wextra -pedantic -std=gnu89
+	int **pt;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
