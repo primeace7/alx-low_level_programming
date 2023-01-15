@@ -12,7 +12,7 @@
 
 int **alloc_grid(int width, int height)
 {
-	int size, i;
+	int i;
 	int *array;
 	int **pt;
 
