@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * new_dog - create a new dog of type struct dog
@@ -9,7 +10,7 @@
  * Return: pointer to the new dog
  */
 
-dot_t *new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *newbie;
 
