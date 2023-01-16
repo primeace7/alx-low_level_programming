@@ -12,11 +12,14 @@
 
 char *argstostr(int argc, char **argv)
 {
-	int count, size;
+	int count, size, old_len, new_len, current_len;
 	char *str;
 
 
 	size = 0;
+	new_len = 0;
+	old_len = 0;
+	current_len = 0;
 	if (argc == 0 || argv == NULL)
 		return (NULL);
 
@@ -29,18 +32,21 @@ char *argstostr(int argc, char **argv)
 	 */
 	for (count = 0; count < argc; ++count)
 	{
-		size = size + (sizeof(*(argv[count])) * slen(argv[count])) + 1;
+		current_len = slen(argv[count]);
+		new_len = old_len + current_len;
+		size = sizeof(char) * new_len;
 		str = realloc(str, size);
 		if (str == NULL)
 		{
 			free(str);
 			return (NULL);
 		}
-		scopy(argv[count], str);
-		scopy("\n", str);
+		scopy(argv[count], str[old_len]);
+		scopy("\n", str[old_len]);
+		old_len += current_len;
 	}
 
-	scopy("\0", str);
+	scopy("\0", str[new_len]);
 	return (str);
 }
 
