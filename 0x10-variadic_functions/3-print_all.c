@@ -6,7 +6,7 @@
  * Return; nothing
  */
 
-void print_all(const char * const format, ...)
+void print_all(const char *format, ...)
 {
 	va_list arg;
 	char *s;
