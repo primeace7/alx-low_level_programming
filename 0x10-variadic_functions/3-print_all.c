@@ -10,8 +10,10 @@ void print_all(const char * const format, ...)
 {
 	va_list arg;
 	char *s, *hold;
+	int found;
 
 	hold = (char *)format;
+	found = 0;
 
 	va_start(arg, format);
 
@@ -21,12 +23,15 @@ void print_all(const char * const format, ...)
 		{
 		case 'c':
 			printf("%c", va_arg(arg, int));
+			found = 1;
 			break;
 		case 'i':
 			printf("%i", va_arg(arg, int));
+			found = 1;
 			break;
 		case 'f':
 			printf("%f", va_arg(arg, double));
+			found = 1;
 			break;
 		case 's':
 		{
@@ -34,14 +39,19 @@ void print_all(const char * const format, ...)
 			if (s == NULL)
 			{
 				printf("(nil)");
+				found = 1;
 				break;
 			}
 			printf("%s", s);
+			found = 1;
 			break;
 		}
 		}
 		if (*hold)
+		{
 			printf(",");
+			found = 0;
+		}
 	}
 	printf("\n");
 }
