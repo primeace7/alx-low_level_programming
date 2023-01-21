@@ -47,7 +47,7 @@ void print_all(const char * const format, ...)
 			break;
 		}
 		}
-		if (*hold)
+		if (*hold && found)
 		{
 			printf(",");
 			found = 0;
