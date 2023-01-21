@@ -9,9 +9,9 @@
 void print_all(const char * const format, ...)
 {
 	va_list arg;
-	char *s, hold;
+	char *s, *hold;
 
-	hold = (char *s)format;
+	hold = (char *)format;
 
 	va_start(arg, format);
 
