@@ -6,16 +6,18 @@
  * Return; nothing
  */
 
-void print_all(const char *format, ...)
+void print_all(const char * const format, ...)
 {
 	va_list arg;
-	char *s;
+	char *s, hold;
+
+	hold = (char *s)format;
 
 	va_start(arg, format);
 
-	while (*format)
+	while (*hold)
 	{
-		switch (*format++)
+		switch (*hold++)
 		{
 		case 'c':
 			printf("%c", va_arg(arg, int));
