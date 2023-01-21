@@ -43,7 +43,7 @@ void print_all(const char * const format, ...)
 			found = 1;
 			break; } }
 		if (*hold && found)
-		{	printf(",");
+		{	printf(", ");
 			found = 0; } }
 	printf("\n");
 }
