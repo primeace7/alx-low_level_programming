@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 	hold = (char *)format;
 	found = 0;
 	va_start(arg, format);
-	while (*hold)
+	while (hold != NULL && *hold)
 	{
 		switch (*hold++)
 		{
