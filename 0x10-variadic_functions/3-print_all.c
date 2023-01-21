@@ -14,9 +14,7 @@ void print_all(const char * const format, ...)
 
 	hold = (char *)format;
 	found = 0;
-
 	va_start(arg, format);
-
 	while (*hold)
 	{
 		switch (*hold++)
@@ -40,18 +38,12 @@ void print_all(const char * const format, ...)
 			{
 				printf("(nil)");
 				found = 1;
-				break;
-			}
+				break; }
 			printf("%s", s);
 			found = 1;
-			break;
-		}
-		}
+			break; } }
 		if (*hold && found)
-		{
-			printf(",");
-			found = 0;
-		}
-	}
+		{	printf(",");
+			found = 0; } }
 	printf("\n");
 }
