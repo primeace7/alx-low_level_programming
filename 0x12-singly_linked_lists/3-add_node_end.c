@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * add-node_end - add a new node to the end of a linked list
+ * add_node_end - add a new node to the end of a linked list
  * @head: pointer to the first node (node 1)
- * str: pointer to the str element of the new node to create
+ * @str: pointer to the str element of the new node to create
  * Return: pointer to the newly created node, or NULL on failure
  */
 
