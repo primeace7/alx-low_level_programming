@@ -10,7 +10,7 @@ size_t print_list(const list_t *h)
 {
 	unsigned int count;
 
-	for (h->next != NULL; count++)
+	for (count = 0; h->next != NULL; count++)
 	{
 		if (h->next == NULL)
 			printf("[0] (nil)\n");
