@@ -11,9 +11,9 @@ size_t list_len(const list_t *h)
 	size_t count;
 	list_t *copy;
 
-	copy =(list_t *)h;
+	copy = (list_t *)h;
 
 	for (count = 0; copy != NULL; count++)
-		*copy = *copy->next;
+		copy = copy->next;
 	return (count);
 }
