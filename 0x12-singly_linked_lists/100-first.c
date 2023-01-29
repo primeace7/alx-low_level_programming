@@ -5,7 +5,7 @@
  * Return: none
  */
 
-void print_before_main(void)
+void __attribute__((constructor)) print_before_main(void)
 {
 	char *st1, *st2;
 
