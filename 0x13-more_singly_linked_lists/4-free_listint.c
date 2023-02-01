@@ -10,9 +10,9 @@ void free_listint(listint_t *head)
 {
 	listint_t *temp;
 
-	for (temp = h; h != NULL; h = temp)
+	for (temp = head; head != NULL; head = temp)
 	{
-		temp = h->next;
-		free(h);
+		temp = head->next;
+		free(head);
 	}
 }
