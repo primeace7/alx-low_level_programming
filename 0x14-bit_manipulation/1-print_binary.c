@@ -21,8 +21,13 @@ void print_binary(unsigned long int n)
 
 	for (; count >= 0; count--)
 	{
-		out = n >> count;
-		n = n - (out << count);
-		_putchar(out + '0');
+		if (n == 0 || n == 1)
+			_putchar(n + '0');
+		else
+		{
+			out = n >> count;
+			n = n - (out << count);
+			_putchar(out + '0');
+		}
 	}
 }
