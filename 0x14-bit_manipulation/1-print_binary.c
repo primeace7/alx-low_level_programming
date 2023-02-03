@@ -11,7 +11,10 @@ void print_binary(unsigned long int n)
 	long unsigned int hold;
 	int out, count;
 
-	for (hold = 1, count = 0; hold <= n && n != 0; count++, hold <<= 1)
+	hold = 1;
+	count = 0;
+
+	for (; hold <= n && n != 0; count++, hold <<= 1)
 		; /*sets hold to the highest power of 2 that can't divide n*/
 	count--; /* set count to the log of hold in base 2*/
 
