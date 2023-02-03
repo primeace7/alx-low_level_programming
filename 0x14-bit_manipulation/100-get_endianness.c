@@ -7,14 +7,16 @@
 
 int get_endianness(void)
 {
-	char *check;
-	int number;
+	char *character;
+	int number, hold;
 
 	number = 1;
 
-	check = (char *)&number;
+	character = (char *)&number;
 
-	if (check == 1)
+	hold = character[0];
+
+	if (hold == 1)
 		return (0);
 	else
 		return (1);
