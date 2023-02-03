@@ -22,7 +22,10 @@ void print_binary(unsigned long int n)
 	for (; count >= 0; count--)
 	{
 		if (n == 0 || n == 1)
+		{
 			_putchar(n + '0');
+			n = n - (out << count);
+		}
 		else
 		{
 			out = n >> count;
