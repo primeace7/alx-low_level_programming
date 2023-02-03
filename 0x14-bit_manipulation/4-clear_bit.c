@@ -15,6 +15,6 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 	hold = 1 << index; /*set hold as mask with 1 at index only*/
 	hold = ~hold;
-	hold &= *n;
+	*n &= hold;
 	return (1);
 }
