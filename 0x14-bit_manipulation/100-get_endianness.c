@@ -17,7 +17,7 @@ int get_endianness(void)
 	hold = character[0];
 
 	if (hold == 1)
-		return (0);
-	else
 		return (1);
+	else
+		return (0);
 }
