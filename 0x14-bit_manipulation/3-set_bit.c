@@ -13,8 +13,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	if (index >= 63)
 		return (-1);
-	hold = 1 << (index - 1); /* set hold as mask */
+	hold = 1 << index; /* set hold as mask */
 	hold = *n | hold;
-	hold >>= index;
+	hold >>= (index - 1);
 	return (1);
 }
