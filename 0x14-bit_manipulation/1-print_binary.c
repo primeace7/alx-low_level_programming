@@ -14,14 +14,15 @@ void print_binary(unsigned long int n)
 	hold = 1;
 	count = 0;
 
-	for (; hold <= n && n != 0; count++, hold <<= 1)
+	for (; hold <= n; count++, hold <<= 1)
 		; /*sets hold to the highest power of 2 that can't divide n*/
-	count--; /* set count to the log of hold in base 2*/
+	if (n != 0)
+		count--; /* set count to the log of hold in base 2*/
 
 	for (; count >= 0; count--)
 	{
 		out = n >> count;
-		n -= (out << count);
+		n = n - (out << count);
 		_putchar(out + '0');
 	}
 }
