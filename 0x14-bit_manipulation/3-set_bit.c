@@ -14,7 +14,6 @@ int set_bit(unsigned long int *n, unsigned int index)
 	if (index >= 63)
 		return (-1);
 	hold = 1 << index; /* set hold as mask */
-	hold = *n | hold;
-	hold >>= (index - 1);
+	n = *n | hold;
 	return (1);
 }
