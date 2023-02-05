@@ -30,8 +30,8 @@ void print_binary(unsigned long int n)
 		else
 		{
 			out = n >> count;
-			n = n - (out << count);
 			_putchar(out + '0');
+			n = n - (out << count);
 		}
 	}
 }
