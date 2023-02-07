@@ -60,7 +60,7 @@ int main(int argc, char **argv)
 	if (fd_to == -1)
 		ops_error(argv[2], 'w');
 
-	while ((read_from = read(fd_from, buffer, 1024)))
+	while ((read_from = read(fd_from, buffer, 1024)) > 0)
 	{
 		write_to = write(fd_to, buffer, read_from);
 		if (write_to == -1)
