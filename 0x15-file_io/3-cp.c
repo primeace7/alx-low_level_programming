@@ -45,15 +45,13 @@ void ops_error(char *file, char ch)
 
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, write_to, read_from, closing;
+	int fd_from, fd_to, write_to, read_from, closing, i;
 	char buffer[1024];
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-
+		exit(97); }
 	fd_from = open(argv[1], O_RDONLY); /*create file descriptor for source*/
 	if (fd_from == -1)
 		ops_error(argv[1], 'r');
@@ -63,21 +61,20 @@ int main(int argc, char **argv)
 		ops_error(argv[2], 'w');
 
 	while ((read_from = read(fd_from, buffer, 1024)))
-	{ /* read 1024 bytes from fd_from and store in buffer. if there's less*/
-		/*than 1024 bytes, then read as many there are to buffer*/
-
-		write_to = write(fd_to, buffer, read_from);
-		if (write_to == -1)
-			ops_error(argv[2], 'w');
-	}
-
+	{
+		for (i = 0; i < 1024; i++)
+		{
+			write_to = write(fd_to, &buffer[i], 1);
+			if (write_to == -1)
+				ops_error(argv[2], 'w');
+			if (buffer[i] == EOF || buffer[i] == '\0')
+				break;  }	}
 	if (read_from == -1) /*handle error from the read inside while loop*/
 		ops_error(argv[1], 'r');
 
 	closing = close(fd_to);
 	if (closing == -1)
 		close_error(fd_to);
-
 	closing = close(fd_from);
 	if (closing == -1)
 		close_error(fd_from);
