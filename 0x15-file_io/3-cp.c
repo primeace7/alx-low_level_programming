@@ -45,7 +45,7 @@ void ops_error(char *file, char ch)
 
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, write_to, read_from, closing, i;
+	int fd_from, fd_to, write_to, read_from, closing;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -62,13 +62,10 @@ int main(int argc, char **argv)
 
 	while ((read_from = read(fd_from, buffer, 1024)))
 	{
-		for (i = 0; i < 1024; i++)
-		{
-			write_to = write(fd_to, &buffer[i], 1);
-			if (write_to == -1)
-				ops_error(argv[2], 'w');
-			if (buffer[i] == EOF || buffer[i] == '\0')
-				break;  }	}
+		write_to = write(fd_to, buffer, read_from);
+		if (write_to == -1)
+			ops_error(argv[2], 'w');
+	}
 	if (read_from == -1) /*handle error from the read inside while loop*/
 		ops_error(argv[1], 'r');
 
