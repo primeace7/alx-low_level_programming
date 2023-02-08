@@ -24,9 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		while (i <= letters && (i % 100) <= 100)
 		{
-			writer = write(STDOUT_FILENO, &ch[i % 100], 1);
-			if (writer != 1)
-				return (0);
+			_putchar(ch[i % 100]);
 			i++;
 		}
 	}
