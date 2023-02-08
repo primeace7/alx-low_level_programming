@@ -10,10 +10,10 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, reader, writer;
-	int ch[100];
+	char ch[100];
 	size_t i;
 
-	i = 0;
+	i = 1;
 	if (filename == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	reader = read(fd, ch, 100);
 	for (; reader > 0; reader = read(fd, ch, 100))
 	{
-		while (i < letters && i < 100)
+		while (i < letters && i <= 100)
 		{
 			writer = write(STDOUT_FILENO, &ch[i], 1);
 			if (writer == -1)
@@ -32,5 +32,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	if (reader < 0)
 		return (0);
-	return (i + 1);
+	return (i);
 }
