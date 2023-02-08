@@ -30,12 +30,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		}
 		if (reader == -1)
 			return (0);
-		if (reader == 1)
-		{
-			writer = write(STDOUT_FILENO, &ch, 1);
-			if (writer == -1)
-				return (0);
-		}
+		writer = write(STDOUT_FILENO, &ch, 1);
+		if (writer == -1)
+			return (0);
 	}
 	return (i + 1);
 }
