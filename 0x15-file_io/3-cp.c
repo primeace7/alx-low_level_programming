@@ -24,7 +24,8 @@ void ops_error(char *file, char ch)
 {
 	if (ch == 'r')
 	{
-		dprintf(STDERR_FILENO, "Error; Can\'t read from file %s\n", file);
+		dprintf(STDERR_FILENO, "Error; Can\'t read from file %s\n"\
+			, file);
 		exit(98);
 	}
 
@@ -64,8 +65,8 @@ int main(int argc, char **argv)
 	for (; read_from > 0; read_from = read(fd_from, buffer, 1024))
 	{
 		write_to = write(fd_to, buffer, read_from);
-			if (write_to < 0)
-				ops_error(argv[2], 'w');
+		if (write_to < 0)
+			ops_error(argv[2], 'w');
 	}
 	if (read_from == -1) /*handle error from the read inside while loop*/
 		ops_error(argv[1], 'r');
