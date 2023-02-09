@@ -45,7 +45,7 @@ void ops_error(char *file, char ch)
 
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, write_to, i, read_from, closing;
+	int fd_from, fd_to, write_to, read_from, closing;
 	int buffer[1024];
 
 	if (argc != 3)
