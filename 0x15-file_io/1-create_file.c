@@ -35,5 +35,6 @@ int create_file(const char *filename, char *text_content)
 	if (writer == -1)
 		return (-1);
 
+	free(buf);
 	return (1);
 }
