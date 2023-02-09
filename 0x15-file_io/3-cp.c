@@ -46,7 +46,7 @@ void ops_error(char *file, char ch)
 int main(int argc, char **argv)
 {
 	int fd_from, fd_to, write_to, read_from, closing;
-	int buffer[1024];
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	if (fd_from == -1)
 		ops_error(argv[1], 'r');
 
-	fd_to = open(argv[2], O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, 664);
+	fd_to = open(argv[2], O_CREAT | O_TRUNC | WRONLY | O_APPEND, 664);
 	if (fd_to == -1)
 		ops_error(argv[2], 'w');
 
