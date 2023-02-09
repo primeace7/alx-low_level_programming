@@ -69,6 +69,8 @@ int main(int argc, char **argv)
 			if (write_to < 0)
 				ops_error(argv[2], 'w');
 		}
+		if (buffer[i] == EOF)
+			break;
 	}
 	if (read_from == -1) /*handle error from the read inside while loop*/
 		ops_error(argv[1], 'r');
