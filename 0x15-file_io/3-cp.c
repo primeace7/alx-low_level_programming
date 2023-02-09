@@ -56,21 +56,16 @@ int main(int argc, char **argv)
 	if (fd_from == -1)
 		ops_error(argv[1], 'r');
 
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664); /*dest fd*/
+	fd_to = open(argv[2], O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, 664);
 	if (fd_to == -1)
 		ops_error(argv[2], 'w');
 
 	read_from = read(fd_from, buffer, 1024);
 	for (; read_from > 0; read_from = read(fd_from, buffer, 1024))
 	{
-		for (i = 0; buffer[i] != EOF && i < 1024; i++)
-		{
-			write_to = write(fd_to, &buffer[i], 1);
+		write_to = write(fd_to, buffer, read_from);
 			if (write_to < 0)
 				ops_error(argv[2], 'w');
-		}
-		if (buffer[i] == EOF)
-			break;
 	}
 	if (read_from == -1) /*handle error from the read inside while loop*/
 		ops_error(argv[1], 'r');
