@@ -66,7 +66,7 @@ int main(int argc, char **argv)
 	read_from = read(fd_from, buffer, 1024);
 	for (; read_from > 0; read_from = read(fd_from, buffer, 1024))
 	{
-		num = strlen(buffer) <= 1024 ? sizeof(buffer) : 1024;
+		num = strlen(buffer) <= 1024 ? strlen(buffer) : 1024;
 		write_to = write(fd_to, buffer, num);
 		if (write_to < 0)
 			ops_error(argv[2], 'w');
