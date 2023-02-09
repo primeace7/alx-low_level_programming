@@ -24,7 +24,7 @@ void ops_error(char *file, char ch)
 {
 	if (ch == 'r')
 	{
-		dprintf(STDERR_FILENO, "Error; Can\'t read from file %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can\'t read from file %s\n", file);
 		exit(98);
 	}
 
