@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 /**
@@ -46,7 +47,7 @@ void ops_error(char *file, char ch)
 int main(int argc, char **argv)
 {
 	int fd_from, fd_to, write_to, read_from, closing;
-	char buffer[1024];
+	char buffer;
 
 	if (argc != 3)
 	{
@@ -59,8 +60,11 @@ int main(int argc, char **argv)
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664); /*dest fd*/
 	if (fd_to == -1)
 		ops_error(argv[2], 'w');
+	buffer = malloc(1024 * sizeof(char));
+	if (buffer == NULL)
+		exit(99);
 
-	while ((read_from = read(fd_from, buffer, 1024)) >= 0)
+	while ((read_from = read(fd_from, buffer, 1024)) > 0)
 	{
 		write_to = write(fd_to, buffer, read_from);
 		if (write_to == -1)
@@ -75,6 +79,7 @@ int main(int argc, char **argv)
 	closing = close(fd_from);
 	if (closing == -1)
 		close_error(fd_from);
+	free(buffer);
 
 	return (0);
 }
