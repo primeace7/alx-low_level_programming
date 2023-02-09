@@ -45,7 +45,7 @@ void ops_error(char *file, char ch)
 
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, write_to, read_from, closing;
+	int fd_from, fd_to, write_to, num, read_from, closing;
 	char *buffer;
 
 	if (argc != 3)
@@ -66,13 +66,13 @@ int main(int argc, char **argv)
 	read_from = read(fd_from, buffer, 1024);
 	for (; read_from > 0; read_from = read(fd_from, buffer, 1024))
 	{
-		write_to = dprintf(fd_to, "%s", buffer);
-		if (write_to < 0 || write_to != read_from)
+		num = strlen(buffer) <= 1024 ? sizeof(buffer) : 1024;
+		write_to = write(fd_to, buffer, num);
+		if (write_to < 0)
 			ops_error(argv[2], 'w');
 	}
 	if (read_from == -1) /*handle error from the read inside while loop*/
 		ops_error(argv[1], 'r');
-
 	closing = close(fd_to);
 	if (closing == -1)
 		close_error(fd_to);
@@ -80,6 +80,5 @@ int main(int argc, char **argv)
 	if (closing == -1)
 		close_error(fd_from);
 	free(buffer);
-
 	return (0);
 }
