@@ -52,11 +52,11 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97); }
-	fd_from = open(argv[1], O_RDONLY); /*create file descriptor for source*/
+	fd_from = open(argv[1], O_RDWR); /*create file descriptor for source*/
 	if (fd_from == -1)
 		ops_error(argv[1], 'r');
 
-	fd_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 664);
+	fd_to = open(argv[2], O_CREAT | O_TRUNC | O_RDWR | O_APPEND, 0664);
 	if (fd_to == -1)
 		ops_error(argv[2], 'w');
 
