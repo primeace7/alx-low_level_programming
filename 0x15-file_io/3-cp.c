@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 	if (buffer == NULL)
 		exit(99);
 
-	read_from = read(fd_from, buffer, 1024);
+	read_from = read(fd_from, buffer, (1024 * sizeof(char)));
 	for (; read_from > 0; read_from = read(fd_from, buffer, 1024))
 	{
 		write_to = write(fd_to, buffer, read_from);
