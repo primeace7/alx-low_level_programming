@@ -63,11 +63,11 @@ int main(int argc, char **argv)
 	if (buffer == NULL)
 		exit(99);
 
-	read_from = read(fd_from, buffer, 1023);
-	for (; read_from > 0; read_from = read(fd_from, buffer, 1023))
+	read_from = read(fd_from, buffer, 1024);
+	for (; read_from > 0; read_from = read(fd_from, buffer, 1024))
 	{
-		write_to = write(fd_to, buffer, read_from);
-		if (write_to == -1 || write_to != read_from)
+		write_to = dprintf(fd_to, "%s", buffer);
+		if (write_to < 0 || write_to != read_from)
 			ops_error(argv[2], 'w');
 	}
 	if (read_from == -1) /*handle error from the read inside while loop*/
