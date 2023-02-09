@@ -10,13 +10,8 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd, writer;
-	char *buf;
 
 	if (filename == NULL)
-		return (-1);
-
-	buf = malloc((strlen(text_content) + 1) * sizeof(char));
-	if (buf == NULL)
 		return (-1);
 
 	fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT);
@@ -25,8 +20,13 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		strcpy(buf, text_content);
-		writer = write(fd, buf, strlen(text_content));
+		writer = write(fd, text_content, strlen(text_content));
+		if (writer == -1)
+			return (-1);
+	}
+	else
+	{
+		writer = write(fd, buf, 0);
 		if (writer == -1)
 			return (-1);
 	}
@@ -35,6 +35,5 @@ int create_file(const char *filename, char *text_content)
 	if (writer == -1)
 		return (-1);
 
-	free(buf);
 	return (1);
 }
