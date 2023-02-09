@@ -26,7 +26,7 @@ int create_file(const char *filename, char *text_content)
 	if (text_content != NULL)
 	{
 		strcpy(buf, text_content);
-		writer = write(fd, buf, sizeof(buf));
+		writer = write(fd, buf, strlen(text_content));
 		if (writer == -1)
 			return (-1);
 	}
