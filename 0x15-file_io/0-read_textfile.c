@@ -9,27 +9,30 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, reader;
-	char ch[100];
-	size_t i;
+	int fd, reader, writer;
+	char *buf;
 
-	i = 1;
+
+	buf = malloc(letters * sizeof(char));
+	if (buf == NULL)
+		return (0);
+
 	if (filename == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-	reader = read(fd, ch, 100);
-	for (; reader > 0; reader = read(fd, ch, 100))
-	{
-		while (i <= letters && (i % 100) <= 100)
-		{
-			_putchar(ch[i % 100]);
-			i++;
-		}
-	}
-	if (reader < 0)
+
+	reader = read(fd, buf, letters);
+	if (reader == -1)
 		return (0);
+
+	writer = write(STDOUT_FILENO, buf, reader);
+	if (writer < 0)
+		return (0);
+
 	close(fd);
-	return (i);
+	free(buf);
+
+	return (reader);
 }
