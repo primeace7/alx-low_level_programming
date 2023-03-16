@@ -1,4 +1,10 @@
-#include "lists.h"
+       if (list == NULL)
+        {
+                new->prev = NULL;
+                new->next = NULL;
+                new->n = n;
+                return (new);
+        }#include "lists.h"
 
 /**
  * add_dnodeint_end - Add a new node to the end of a linked list
@@ -23,6 +29,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		new->prev = NULL;
 		new->next = NULL;
 		*head = new;
+		return (new);
 	}
 
 	for (; list->next != NULL; list = list->next)
