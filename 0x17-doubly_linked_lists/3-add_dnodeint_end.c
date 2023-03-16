@@ -1,10 +1,4 @@
-       if (list == NULL)
-        {
-                new->prev = NULL;
-                new->next = NULL;
-                new->n = n;
-                return (new);
-        }#include "lists.h"
+#include "lists.h"
 
 /**
  * add_dnodeint_end - Add a new node to the end of a linked list
