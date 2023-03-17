@@ -29,5 +29,7 @@ void free_dlistint(dlistint_t *head)
 		head = hold;
 	}
 
+	if (head->prev != NULL)
+		free(head->prev);
 	free(head);
 }
