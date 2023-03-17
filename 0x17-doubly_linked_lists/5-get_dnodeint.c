@@ -10,24 +10,23 @@
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *iter;
+	dlistint_t *list;
 	unsigned int count;
 
 	if (head == NULL)
 		return (NULL);
 
-	iter = head;
-	for (count = 0; count < index; head = head->next, count++)
-	{
-		if (head == NULL)
-			return (NULL);
-		iter = head;
-	}
-
-	if (index = 0)
+	if (index == 0)
 		return (head);
 
-	if (head == NULL && count >= index)
-		return (NULL);
-	return (iter->next);
+	list = head;
+
+	for (count = 0; count < index; count++)
+	{
+		list = list->next;
+		if (list == NULL)
+			return (NULL);
+	}
+
+	return (list);
 }
