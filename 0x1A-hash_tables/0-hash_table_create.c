@@ -24,10 +24,19 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	for (count = 0; count < size; count++)
 	{
-		((table->array)[count])->key = NULL;
-		((table->array)[count])->value = NULL;
-		((table->array)[count])->next = NULL;
+		(*(table->array))[count].key = NULL;
+		(*(table->array))[count].value = NULL;
+		(*(table->array))[count].next = NULL;
 	}
 
 	return (table);
+}
+
+int main(void)
+{
+    hash_table_t *ht;
+
+    ht = hash_table_create(1024);
+    printf("%p\n", (void *)ht);
+    return (EXIT_SUCCESS);
 }
