@@ -22,12 +22,12 @@ hash_table_t *hash_table_create(unsigned long int size)
 	table->array = &head_node;
 	table->size = size;
 
-	for (count = 0; count < size; count++)
+/*	for (count = 0; count < size; count++)
 	{
 		((*(table->array))[count]).key = NULL;
 		((*(table->array))[count]).value = NULL;
 		((*(table->array))[count]).next = NULL;
 	}
-
+*/
 	return (table);
 }
