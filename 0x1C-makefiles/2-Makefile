@@ -7,4 +7,4 @@ NAME = school
 all: $(OBJ)
 	$(CC)  $(OBJ) -o school
 
-main.o school.o : m.h
+%.o : m.h
