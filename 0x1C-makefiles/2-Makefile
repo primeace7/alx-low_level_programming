@@ -4,9 +4,7 @@ OBJ = main.o school.o
 NAME = school
 
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(CC) -o $@ $^
+all: $(OBJ)
+	$(CC) -o $(NAME) $^
 
 $(OBJ) : m.h
