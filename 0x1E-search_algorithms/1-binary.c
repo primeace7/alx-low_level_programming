@@ -20,8 +20,8 @@ int binary_search(int *array, size_t size, int value)
 		print_array(array, size);
 		if (array[0] == value)
 			return (0);
-		else return (-1);
-	}
+		else
+			return (-1); }
 
 	while (size > 1)
 	{
@@ -31,26 +31,19 @@ int binary_search(int *array, size_t size, int value)
 		if (array[midpoint] == value)
 		{
 			index += midpoint;
-			return (index);
-		}
+			return (index); }
 		else if (value < array[midpoint])
 			size -= (size % 2 == 0) ? (size / 2 + 1) : (size / 2);
 		else
 		{
 			size = size / 2;
 			index += (midpoint + 1);
-			array += (midpoint + 1);
-		}
+			array += (midpoint + 1); }
 	}
 	if (array[0] == value)
-	{
 		return (index);
-	}
-	else
-	{
-		print_array(array, size);
-		return (-1);
-	}
+	print_array(array, size);
+	return (-1);
 }
 
 /**
